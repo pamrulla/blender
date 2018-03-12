@@ -3536,6 +3536,7 @@ static void registerCompositNodes(void)
 
 	register_node_type_cmp_colorcorrection();
 	register_node_type_cmp_boxmask();
+	register_node_type_cmp_lightningeffect();
 	register_node_type_cmp_ellipsemask();
 	register_node_type_cmp_bokehimage();
 	register_node_type_cmp_bokehblur();

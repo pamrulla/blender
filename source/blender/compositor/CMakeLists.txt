@@ -536,6 +536,12 @@ set(SRC
 
 	operations/COM_MaskOperation.cpp
 	operations/COM_MaskOperation.h
+    
+    #Effect
+    operations/COM_LightningEffectOperation.cpp
+    operations/COM_LightningEffectOperation.h
+    nodes/COM_LightningEffectNode.cpp
+    nodes/COM_LightningEffectNode.h
 )
 
 list(APPEND INC

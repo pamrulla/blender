@@ -147,6 +147,7 @@ def register_node_categories(identifier, cat_list):
 
     # stores: (categories list, menu draw function, submenu types, panel types)
     _node_categories[identifier] = (cat_list, draw_add_menu, menu_types, panel_types)
+    print(_node_categories)
 
 
 def node_categories_iter(context):

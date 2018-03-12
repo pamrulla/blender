@@ -129,6 +129,7 @@ void register_node_type_cmp_sunbeams(void);
 
 void register_node_type_cmp_colorcorrection(void);
 void register_node_type_cmp_boxmask(void);
+void register_node_type_cmp_lightningeffect(void);
 void register_node_type_cmp_ellipsemask(void);
 void register_node_type_cmp_bokehimage(void);
 void register_node_type_cmp_bokehblur(void);

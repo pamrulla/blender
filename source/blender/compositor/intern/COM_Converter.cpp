@@ -37,6 +37,7 @@ extern "C" {
 #include "COM_BokehBlurNode.h"
 #include "COM_BokehImageNode.h"
 #include "COM_BoxMaskNode.h"
+#include "COM_LightningEffectNode.h"
 #include "COM_BrightnessNode.h"
 #include "COM_ChannelMatteNode.h"
 #include "COM_ChromaMatteNode.h"
@@ -248,6 +249,9 @@ Node *Converter::convert(bNode *b_node)
 			break;
 		case CMP_NODE_MASK_BOX:
 			node = new BoxMaskNode(b_node);
+			break;
+		case CMP_NODE_EFFECT_LIGHTNING:
+			node = new LightningEffectNode(b_node);
 			break;
 		case CMP_NODE_MASK_ELLIPSE:
 			node = new EllipseMaskNode(b_node);

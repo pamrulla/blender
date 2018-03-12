@@ -6231,7 +6231,7 @@ static const EnumPropertyItem node_masktype_items[] = {
 static void def_cmp_boxmask(StructRNA *srna) 
 {
 	PropertyRNA *prop;
-
+	
 	prop = RNA_def_property(srna, "mask_type", PROP_ENUM, PROP_NONE);
 	RNA_def_property_enum_sdna(prop, NULL, "custom1");
 	RNA_def_property_enum_items(prop, node_masktype_items);
@@ -6274,6 +6274,90 @@ static void def_cmp_boxmask(StructRNA *srna)
 	RNA_def_property_range(prop, DEG2RADF(-1800.0f), DEG2RADF(1800.0f));
 	RNA_def_property_ui_text(prop, "Rotation", "Rotation angle of the box");
 	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+}
+
+static void def_cmp_lightningeffect(StructRNA *srna)
+{
+	PropertyRNA *prop;
+
+	RNA_def_struct_sdna_from(srna, "NodeLightningEffect", "storage");
+
+	prop = RNA_def_property(srna, "seed", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "seed");
+	RNA_def_property_int_default(prop, 1);
+	RNA_def_property_ui_text(prop, "seed", "Number of twigs to the branch");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	/*prop = RNA_def_property(srna, "x1", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "x1");
+	RNA_def_property_int_default(prop, 1);
+	//RNA_def_property_range(prop, 0, 1);
+	RNA_def_property_ui_text(prop, "X1", "X1 position of the middle of the box");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "y1", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "y1");
+	RNA_def_property_int_default(prop, 1);
+	//RNA_def_property_range(prop, 0, 1);
+	RNA_def_property_ui_text(prop, "Y1", "Y1 position of the middle of the box");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+	
+	prop = RNA_def_property(srna, "x2", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "x2");
+	RNA_def_property_int_default(prop, 5);
+	//RNA_def_property_range(prop, 0, 1);
+	RNA_def_property_ui_text(prop, "X2", "X2 position of the middle of the box");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "y2", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "y2");
+	RNA_def_property_int_default(prop, 5);
+	//RNA_def_property_range(prop, 0, 1);
+	RNA_def_property_ui_text(prop, "Y2", "Y2 position of the middle of the box");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");*/
+
+	prop = RNA_def_property(srna, "iterations", PROP_FLOAT, PROP_NONE);
+	RNA_def_property_float_sdna(prop, NULL, "iterations");
+	RNA_def_property_float_default(prop, 0.1);
+	RNA_def_property_range(prop, 0.0, 1.0);
+	RNA_def_property_ui_text(prop, "Twitch", "Twists in the bolt");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "offsetamount", PROP_FLOAT, PROP_NONE);
+	RNA_def_property_float_sdna(prop, NULL, "offsetAmount");
+	RNA_def_property_float_default(prop, 0.5);
+	RNA_def_property_range(prop, 0.0, 1.0);
+	RNA_def_property_ui_text(prop, "Shape", "Curve shape of bolt");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "branches", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "branches");
+	RNA_def_property_int_default(prop, 3);
+	RNA_def_property_range(prop, 0, 50);
+	RNA_def_property_ui_text(prop, "Branches", "Number of branches to the lightning bolt");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "rotation", PROP_FLOAT, PROP_NONE);
+	RNA_def_property_float_sdna(prop, NULL, "rotation");
+	RNA_def_property_float_default(prop, 0.5);
+	RNA_def_property_range(prop, 0.0, 1.0);
+	RNA_def_property_ui_text(prop, "Rotation", "randomRotation position of the middle of the box");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "length", PROP_FLOAT, PROP_NONE);
+	RNA_def_property_float_sdna(prop, NULL, "length");
+	RNA_def_property_float_default(prop, 0.5);
+	RNA_def_property_range(prop, 0, 1);
+	RNA_def_property_ui_text(prop, "Length", "lengthScale position of the middle of the box");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
+	prop = RNA_def_property(srna, "twigs", PROP_INT, PROP_NONE);
+	RNA_def_property_int_sdna(prop, NULL, "twigs");
+	RNA_def_property_int_default(prop, 1);
+	RNA_def_property_range(prop, 0, 5);
+	RNA_def_property_ui_text(prop, "Twigs", "Number of twigs to the branch");
+	RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
+
 }
 
 static void def_cmp_ellipsemask(StructRNA *srna)

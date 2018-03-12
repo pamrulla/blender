@@ -248,6 +248,7 @@ typedef struct bNodeType {
 #define NODE_CLASS_SCRIPT			32
 #define NODE_CLASS_INTERFACE		33
 #define NODE_CLASS_SHADER 			40
+#define NODE_CLASS_EFFECT			60
 #define NODE_CLASS_LAYOUT			100
 
 /* nodetype->compatibility */
@@ -934,16 +935,19 @@ void            ntreeGPUMaterialNodes(struct bNodeTree *ntree, struct GPUMateria
 
 #define CMP_NODE_COLORCORRECTION 312
 #define CMP_NODE_MASK_BOX       313
-#define CMP_NODE_MASK_ELLIPSE   314
-#define CMP_NODE_BOKEHIMAGE     315
-#define CMP_NODE_BOKEHBLUR      316
-#define CMP_NODE_SWITCH         317
-#define CMP_NODE_PIXELATE       318
+#define CMP_NODE_MASK_ELLIPSE   315
+#define CMP_NODE_BOKEHIMAGE     316
+#define CMP_NODE_BOKEHBLUR      317
+#define CMP_NODE_SWITCH         318
+#define CMP_NODE_PIXELATE       319
 
-#define CMP_NODE_MAP_RANGE	319
-#define CMP_NODE_PLANETRACKDEFORM	320
-#define CMP_NODE_CORNERPIN          321
-#define CMP_NODE_SWITCH_VIEW    322
+#define CMP_NODE_MAP_RANGE	320
+#define CMP_NODE_PLANETRACKDEFORM	321
+#define CMP_NODE_CORNERPIN          322
+#define CMP_NODE_SWITCH_VIEW    323
+
+
+#define CMP_NODE_EFFECT_LIGHTNING       324
 
 /* channel toggles */
 #define CMP_CHAN_RGB		1

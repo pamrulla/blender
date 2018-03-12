@@ -2602,6 +2602,10 @@ void blo_do_versions_260(FileData *fd, Library *UNUSED(lib), Main *main)
 							NodeBoxMask *n = node->storage;
 							n->rotation = DEG2RADF(n->rotation);
 						}
+						if (node->type == CMP_NODE_EFFECT_LIGHTNING) {
+							NodeLightningEffect *n = node->storage;
+							//n->rotation = DEG2RADF(n->rotation);
+						}
 						if (node->type == CMP_NODE_MASK_ELLIPSE) {
 							NodeEllipseMask *n = node->storage;
 							n->rotation = DEG2RADF(n->rotation);

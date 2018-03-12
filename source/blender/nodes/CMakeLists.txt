@@ -125,7 +125,8 @@ set(SRC
 	composite/nodes/node_composite_switchview.c
 	composite/nodes/node_composite_colorcorrection.c
 	composite/nodes/node_composite_pixelate.c
-
+    composite/nodes/node_composite_lightningeffect.c
+    
 	composite/node_composite_tree.c
 	composite/node_composite_util.c
 

@@ -414,6 +414,9 @@ compositor_node_categories = [
         NodeItem("NodeReroute"),
         NodeItem("CompositorNodeSwitch"),
         ]),
+    CompositorNodeCategory("CMP_EFFECT", "Effect", items=[
+        NodeItem("CompositorNodeLightningEffect"),
+        ]),
     ]
 
 texture_node_categories = [

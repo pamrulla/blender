@@ -79,7 +79,7 @@ void BoxMaskOperation::executePixelSampled(float output[4], float x, float y, Pi
 		case CMP_NODE_MASKTYPE_SUBTRACT:
 			if (inside) {
 				output[0] = inputMask[0] - inputValue[0];
-				CLAMP(output[0], 0, 1);
+				CLAMP(output[0], 0, 1);	
 			}
 			else {
 				output[0] = inputMask[0];

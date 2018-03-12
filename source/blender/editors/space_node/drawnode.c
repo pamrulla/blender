@@ -2216,6 +2216,38 @@ static void node_composit_buts_boxmask(uiLayout *layout, bContext *UNUSED(C), Po
 	uiItemR(layout, ptr, "mask_type", 0, NULL, ICON_NONE);
 }
 
+static void node_composit_buts_lightningeffect(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
+{
+	uiLayout *row;
+
+	row = uiLayoutRow(layout, true);
+	uiItemR(row, ptr, "seed", 0, NULL, ICON_NONE);
+
+	/*uiItemL(layout, IFACE_("Start Point"), ICON_NONE);
+	row = uiLayoutRow(layout, true);
+	uiItemR(row, ptr, "x1", 0, NULL, ICON_NONE);
+	uiItemR(row, ptr, "y1", 0, NULL, ICON_NONE);
+
+	uiItemL(layout, IFACE_("End Point"), ICON_NONE);
+	row = uiLayoutRow(layout, true);
+	uiItemR(row, ptr, "x2", 0, NULL, ICON_NONE);
+	uiItemR(row, ptr, "y2", 0, NULL, ICON_NONE);
+	*/
+
+	uiItemL(layout, IFACE_("Shape"), ICON_NONE);
+
+	uiItemR(layout, ptr, "iterations", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
+	uiItemR(layout, ptr, "offsetamount", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
+
+	uiItemL(layout, IFACE_("Branches"), ICON_NONE);
+	uiItemR(layout, ptr, "branches", 0, NULL, ICON_NONE);
+	uiItemR(layout, ptr, "rotation", 0, NULL, ICON_NONE);
+	uiItemR(layout, ptr, "length", 0, NULL, ICON_NONE);
+	uiItemR(layout, ptr, "twigs", 0, NULL, ICON_NONE);
+
+	uiItemL(layout, IFACE_("Position & Mask"), ICON_NONE);
+}
+
 static void node_composit_buts_bokehimage(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 {
 	uiItemR(layout, ptr, "flaps", 0, NULL, ICON_NONE);
@@ -2706,6 +2738,9 @@ static void node_composit_set_butfunc(bNodeType *ntype)
 		case CMP_NODE_MASK_BOX:
 			ntype->draw_buttons = node_composit_buts_boxmask;
 			ntype->draw_backdrop = node_composit_backdrop_boxmask;
+			break;
+		case CMP_NODE_EFFECT_LIGHTNING:
+			ntype->draw_buttons = node_composit_buts_lightningeffect;
 			break;
 		case CMP_NODE_MASK_ELLIPSE:
 			ntype->draw_buttons = node_composit_buts_ellipsemask;

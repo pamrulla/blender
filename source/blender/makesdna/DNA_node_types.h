@@ -564,6 +564,21 @@ typedef struct NodeBoxMask {
 	int pad;
 } NodeBoxMask;
 
+typedef struct NodeLightningEffect {
+	int seed;
+	int x1;
+	int y1;
+	int x2;
+	int y2;
+	float iterations;
+	float offsetAmount;
+	int branches;
+	float rotation;
+	float length;
+	int twigs;
+	int pad;
+} NodeLightningEffect;
+
 typedef struct NodeEllipseMask {
 	float x;
 	float y;

@@ -604,6 +604,7 @@ int node_get_colorid(bNode *node)
 		case NODE_CLASS_SCRIPT:     return TH_NODE_SCRIPT;
 		case NODE_CLASS_PATTERN:    return TH_NODE_PATTERN;
 		case NODE_CLASS_LAYOUT:     return TH_NODE_LAYOUT;
+		case NODE_CLASS_EFFECT:      return TH_NODE_EFFECT;
 		default:                    return TH_NODE;
 	}
 }
